@@ -1,0 +1,21 @@
+<section class="container">
+    <table class="table table-bordered table-striped" ng-controller="MercadosController">
+        <caption>
+            Mercados
+        </caption>
+        <thead>
+            <tr>
+                <th>Mercado</th>
+                <th>Compra</th>
+                <th>Venda</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="mercado in mercados">
+                <td><a href="cambio.html">{{mercado.nome}}</a></td>
+                <td>{{mercado.compra}}</td>
+                <td>{{mercado.venda}}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

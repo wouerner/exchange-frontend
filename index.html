@@ -8,13 +8,18 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
     <script
 			  src="https://code.jquery.com/jquery-2.2.4.min.js"
 			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
 			  crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="//code.angularjs.org/1.4.4/angular-route.js"></script>
+
     <script src="scripts/app.js"></script>
+    <script src="scripts/routes.js"></script>
     <script src="scripts/controllers/mercado.js"></script> 
+    <script src="scripts/controllers/cambio.js"></script> 
     </head> 
     <body> 
         <nav class="navbar navbar-inverse" role="navigation">
@@ -27,67 +32,26 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Brand</a>
+              <a class="navbar-brand" href="#">ExchangeBR</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>
-              </ul>
-
-              <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Link</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                  </ul>
-                </li>
+                <li class=""><a href="#/cambio">Cambio</a></li>
+                <li class=""><a href="#/cadastro">Cadastro</a></li>
+                <li class=""><a href="#/historico-deposito">Historico Deposito</a></li>
+                <li class=""><a href="#/login">Login</a></li>
+                <li class=""><a href="#/mercado">Mercado</a></li>
+                <li class=""><a href="#/error">Error</a></li>
+                <li class=""><a href="#/ordens">Ordens</a></li>
+                <li class=""><a href="#/perfil">Perfil</a></li>
               </ul>
             </div>
             <!-- /.navbar-collapse -->
           </div>
           <!-- /.container-fluid -->
         </nav>
-
-        <section class="container">
-        <table class="table table-bordered table-striped" ng-controller="MercadosController">
-            <caption>
-                Mercados
-            </caption>
-            <thead>
-                <tr>
-                    <th>Mercado</th>
-                    <th>Compra</th>
-                    <th>Venda</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="mercado in mercados">
-                    <td><a href="cambio.html">{{mercado.nome}}</a></td>
-                    <td>{{mercado.compra}}</td>
-                    <td>{{mercado.venda}}</td>
-                </tr>
-            </tbody>
-        </table>
-        </section>
+        <ng-view></ng-view>
     </body>
 </html>

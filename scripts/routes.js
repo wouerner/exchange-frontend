@@ -1,15 +1,38 @@
-    app.config(['$routeProvider', function ($routeProvider){
-        $routeProvider
-        .when('/uc/:id', {templateUrl: 'views/index.html'})
-        .when('/uc/:id/show', {templateUrl: 'views/documento/show.html'})
-        .when('/index', { controller: 'DocumentoController', templateUrl: 'views/documento/index.html'})
-        .when('/regranegocio', { controller: 'RegraNegocioController', templateUrl: 'views/regraNegocio/index.html'})
-        .when('/regranegocio/:id', { controller: 'RegraNegocioController', templateUrl: 'views/regraNegocio/index.html'})
-        .when('/mensagem', { controller: 'MensagemController', templateUrl: 'views/mensagem/index.html'})
-        .when('/tela', { controller: 'TelaController', templateUrl: 'views/tela/index.html'})
-        .when('/tela/:id', { controller: 'TelaController', templateUrl: 'views/tela/index.html'})
-        .when('/campo/:id', { controller: 'CampoController', templateUrl: 'views/campo/index.html'})
-        .when('/projeto', { controller: 'ProjetoController', templateUrl: 'views/projeto/index.html'})
-        .when('/documento/:id', { controller: 'DocumentoController', templateUrl: 'views/documento/index.html'})
-        .otherwise({redirectTo: '/'});
-    }]);
+App.config(function($routeProvider) {
+    $routeProvider
+        .when('/login', {
+          templateUrl: 'views/login.html',
+          controller: ''
+        })
+        .when('/mercado', {
+          templateUrl: 'views/mercado.html',
+          controller: 'MercadosController'
+        })
+        .when('/cambio', {
+          templateUrl: 'views/cambio.html',
+          controller: 'CambioController'
+        })
+        .when('/cadastro', {
+          templateUrl: 'views/cadastro.html',
+          controller: 'CadastroController'
+        })
+        .when('/error', {
+          templateUrl: 'views/404.html',
+          controller: ''
+        })
+        .when('/historico-deposito', {
+          templateUrl: 'views/historico-deposito.html',
+          controller: ''
+        })
+        .when('/perfil', {
+          templateUrl: 'views/perfil.html',
+          controller: ''
+        })
+        .when('/ordens', {
+          templateUrl: 'views/ordens.html',
+          controller: ''
+        })
+        .otherwise({
+          redirectTo: '/error'
+        });
+});
